@@ -1,14 +1,15 @@
 import csv
 import random
+import copy
 
 
 
 Covid_Cases = []
-with open('covid_data.csv') as file:
+with open ('covid_data.csv') as file:
     reader = csv.DictReader(file)
     for row in reader:
         Covid_Cases.append(dict(row))
-
+print (Covid_Cases)
 
 new_cases = sum(int(row['new_cases']) for row in Covid_Cases)
 Deaths = sum(int(row['deaths']) for row in Covid_Cases)
